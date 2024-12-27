@@ -1,3 +1,36 @@
+:root {
+  --gradient-start: #0ea5e9;
+  --gradient-end: #6366f1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep functionality */
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Smooth transitions for all hover states */
+a, button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 .App {
   text-align: center;
 }
@@ -26,6 +59,21 @@
 
 .App-link {
   color: #61dafb;
+}
+
+/* 3D Transform Styles */
+.perspective-1000 {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 @keyframes App-logo-spin {
