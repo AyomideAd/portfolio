@@ -11,11 +11,11 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
+    // { name: 'Skills', href: '#skills' },
     { name: 'Tech Stack', href: '#tech-stack' },
     { name: 'Timeline', href: '#timeline' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Stats', href: '#stats' },
+    // { name: 'Stats', href: '#stats' },
   ];
 
   const socialIcons = [

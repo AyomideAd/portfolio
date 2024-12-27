@@ -8,11 +8,11 @@ const NavigationDots = () => {
   const sections = [
     { id: 'home', icon: FaHome },
     { id: 'about', icon: FaUser },
-    { id: 'skills', icon: FaCode },
+    // { id: 'skills', icon: FaCode },
     { id: 'tech-stack', icon: FaCog },
     { id: 'timeline', icon: FaHistory },
     { id: 'projects', icon: FaProjectDiagram },
-    { id: 'stats', icon: FaChartBar },
+    // { id: 'stats', icon: FaChartBar },
   ];
 
   useEffect(() => {

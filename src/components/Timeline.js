@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaStar, FaGraduationCap, FaBriefcase, FaTrophy, FaCode } from 'react-icons/fa';
+import { FaStar, FaLaptopCode, FaBriefcase, FaTrophy, FaCode } from 'react-icons/fa';
 
 const Timeline = () => {
   const achievements = [
     {
-      year: '2024',
-      title: 'Software Engineering Certification',
-      description: 'Obtained comprehensive Software Engineering certification from Honeytreat Academy, deepening expertise in modern development practices and technologies.',
-      icon: FaGraduationCap,
+      year: '2024-Present',
+      title: 'Full Stack Developer at Brainy Code Inc.',
+      description: 'Gained in-depth knowledge of software development, focusing on programming fundamentals, modern development practices, and creating efficient, scalable solutions.',
+      icon: FaLaptopCode,
       color: '#ec4899'
     },
     {

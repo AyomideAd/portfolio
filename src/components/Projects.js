@@ -21,7 +21,7 @@ const Projects = () => {
     },
     {
       title: "Music Player",
-      description: "A real-time chat application with features like group messaging and file sharing.",
+      description: "A dynamic and interactive Music Player with real-time audio playback, featuring a sleek interface, intuitive controls, and seamless functionality.",
       tags: ["HTML", "CSS", "JavaScript"],
       // github: "#",
       live: "https://music-player-iota-seven.vercel.app/",

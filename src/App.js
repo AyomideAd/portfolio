@@ -46,9 +46,9 @@ function App() {
         <section id="about">
           <About />
         </section>
-        <section id="skills">
+        {/* <section id="skills">
           <Skills />
-        </section>
+        </section> */}
         <section id="tech-stack">
           <TechStack3D />
         </section>
@@ -58,9 +58,9 @@ function App() {
         <section id="projects">
           <Projects />
         </section>
-        <section id="stats">
+        {/* <section id="stats">
           <Stats />
-        </section>
+        </section> */}
       </div>
 
       <NavigationDots />

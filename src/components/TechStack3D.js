@@ -14,8 +14,9 @@ const TechStack3D = () => {
     { icon: SiTypescript, name: 'TypeScript', color: '#3178C6' },
     { icon: SiTailwindcss, name: 'Tailwind', color: '#06B6D4' },
     { icon: SiMongodb, name: 'MongoDB', color: '#47A248' },
-    { icon: FaDatabase, name: 'SQL', color: '#00758F' },
+    { icon: FaDatabase, name: 'PostgreSQL', color: '#00758F' },
     { icon: FaCode, name: 'REST APIs', color: '#FF5733' },
+    { icon: FaReact, name: 'Next.js', color: '#000000' },
   ];
 
   useEffect(() => {
