@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
@@ -77,14 +77,14 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <a
+                  {/* <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-primary transition-colors"
                   >
                     <FaGithub size={20} />
-                  </a>
+                  </a> */}
                   <a
                     href={project.live}
                     target="_blank"
@@ -98,6 +98,18 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Call-To-Action Button */}
+<div className="text-center mt-10">
+  <a
+    href="https://github.com/AyomideAd" // Replace with your actual portfolio link
+    target="_blank" // Opens in a new tab
+    rel="noopener noreferrer" // Security measure
+    className="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark transition-colors duration-300"
+  >
+    View My Portfolio
+  </a>
+</div>
       </div>
     </section>
   );

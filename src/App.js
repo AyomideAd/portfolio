@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,8 +10,11 @@ import NavigationDots from './components/NavigationDots';
 import CustomCursor from './components/CustomCursor';
 import TechStack3D from './components/TechStack3D';
 import Timeline from './components/Timeline';
+import Footer from './components/Footer';
 
 function App() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   useEffect(() => {
     // Create animated background gradient
     const colors = ['#0ea5e9', '#6366f1', '#8b5cf6', '#ec4899'];
@@ -26,6 +29,19 @@ function App() {
 
     const intervalId = setInterval(updateGradient, 3000);
     return () => clearInterval(intervalId);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
@@ -61,6 +77,9 @@ function App() {
         {/* <section id="stats">
           <Stats />
         </section> */}
+        <section>
+          <Footer />
+        </section>
       </div>
 
       <NavigationDots />
@@ -70,7 +89,7 @@ function App() {
         <div
           className="h-full bg-primary transition-all duration-150"
           style={{
-            width: `${((window.scrollY) / (document.documentElement.scrollHeight - window.innerHeight)) * 100}%`
+            width: `${scrollProgress}%`
           }}
         />
       </div>

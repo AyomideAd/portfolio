@@ -47,7 +47,7 @@ const TechStack3D = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 perspective-1000"
+          className="grid grid-cols-2 md:grid-cols-3 gap-6 perspective-1000"
           style={{
             transform: isHovered
               ? `rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg)`

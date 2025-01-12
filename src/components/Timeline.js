@@ -1,8 +1,13 @@
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaStar, FaLaptopCode, FaBriefcase, FaTrophy, FaCode } from 'react-icons/fa';
+import Modal from './Modal'; // Make sure to import the Modal component
 
 const Timeline = () => {
+  const [selectedAchievement, setSelectedAchievement] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const achievements = [
     {
       year: '2024-Present',
@@ -32,6 +37,16 @@ const Timeline = () => {
     threshold: 0.1,
   });
 
+  const handleAchievementClick = (achievement) => {
+    setSelectedAchievement(achievement);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedAchievement(null);
+  };
+
   return (
     <section id="timeline" className="py-20 bg-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,9 +56,7 @@ const Timeline = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My Journey
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Journey</h2>
           <p className="text-gray-400">Milestones and achievements</p>
         </motion.div>
 
@@ -61,16 +74,13 @@ const Timeline = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className={`relative flex items-center mb-12 ${
-                index % 2 === 0 ? 'justify-start' : 'justify-end'
-              } md:justify-between`}
+              className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+              onClick={() => handleAchievementClick(achievement)} // Add click handler
             >
               {/* Content */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className={`w-full md:w-[45%] ${
-                  index % 2 === 0 ? 'md:text-right' : 'md:text-left'
-                }`}
+                className={`w-full md:w-[45%] ${index % 2 === 0 ? 'md:text-right' : 'md:text-right'}`}
               >
                 <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
                   <motion.div
@@ -85,18 +95,11 @@ const Timeline = () => {
                       style={{ color: achievement.color }}
                     />
                   </motion.div>
-                  <h3 className="text-xl font-bold mb-2 text-white">
-                    {achievement.title}
-                  </h3>
-                  <p className="text-gray-400 mb-3">
-                    {achievement.description}
-                  </p>
+                  <h3 className="text-xl font-bold mb-2 text-white">{achievement.title}</h3>
+                  <p className="text-gray-400 mb-3">{achievement.description}</p>
                   <span 
                     className="inline-block px-4 py-1 rounded-full text-sm font-semibold"
-                    style={{ 
-                      backgroundColor: `${achievement.color}20`,
-                      color: achievement.color 
-                    }}
+                    style={{ backgroundColor: `${achievement.color}20`, color: achievement.color }}
                   >
                     {achievement.year}
                   </span>
@@ -119,6 +122,9 @@ const Timeline = () => {
           ))}
         </div>
       </div>
+
+      {/* Modal for displaying achievement details */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} achievement={selectedAchievement} />
     </section>
   );
 };

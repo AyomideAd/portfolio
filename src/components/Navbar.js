@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
+import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
@@ -15,6 +15,7 @@ const Navbar = () => {
     { name: 'Tech Stack', href: '#tech-stack' },
     { name: 'Timeline', href: '#timeline' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Socials', href: '#footer' },
     // { name: 'Stats', href: '#stats' },
   ];
 

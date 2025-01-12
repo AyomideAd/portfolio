@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaHome, FaUser, FaCode, FaCog, FaHistory, FaProjectDiagram, FaChartBar } from 'react-icons/fa';
+import { FaHome, FaUser, FaCode, FaCog, FaHistory, FaProjectDiagram, FaChartBar, FaCampground } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
 const NavigationDots = () => {
@@ -12,6 +12,7 @@ const NavigationDots = () => {
     { id: 'tech-stack', icon: FaCog },
     { id: 'timeline', icon: FaHistory },
     { id: 'projects', icon: FaProjectDiagram },
+    { id: 'footer', icon: FaCampground },
     // { id: 'stats', icon: FaChartBar },
   ];
 
